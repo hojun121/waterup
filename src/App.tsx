@@ -8,21 +8,33 @@ import {Members} from "./component/Members";
 import {Location} from "./component/Location";
 import {Copyright} from "./component/Copyright";
 import {Initializer} from "./initializer/Initializer";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {MemberDetail} from "./component/MemberDetail";
 
 const App = () => {
     Initializer();
+    const wrappingComponent = (
+        <>
+            <Introduce/>
+            <Notice/>
+            <Reserve/>
+            <Members/>
+            <Location/>
+        </>
+    );
     return (
         <>
-            <Nav/>
-            <Home/>
-            <main id="main">
-                <Introduce/>
-                <Notice/>
-                <Reserve/>
-                <Members/>
-                <Location/>
-            </main>
-            <Copyright/>
+            <BrowserRouter>
+                <Nav/>
+                <Home/>
+                <main id="main">
+                    <Routes>
+                        <Route path="/" element={wrappingComponent} />
+                        <Route path="/actor/:actorId" element={<MemberDetail/>} />
+                    </Routes>
+                </main>
+                <Copyright/>
+            </BrowserRouter>
         </>
     );
 }

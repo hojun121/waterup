@@ -20,6 +20,7 @@ import * as _ from "lodash";
 import Swiper from "swiper";
 import "swiper/swiper-bundle.min.css"
 import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
+import {useParams} from "react-router-dom";
 
 type props = {
     imageName1: string;
@@ -49,94 +50,103 @@ const IMAGE_POLL = {
     q1: q1
 }
 
-export const MemberDetail = ({imageName1, imageName2, name, role, comment, instaUrl}: props) => {
-    SwiperCore.use([Navigation, Pagination, Autoplay]);
-    React.useEffect(() => {
-        new Swiper('.portfolio-details-slider', {
-            speed: 400,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true
-            }
-        });
-    }, []);
-    const image = _.get(IMAGE_POLL, imageName1);
-    const image2 = _.get(IMAGE_POLL, imageName2);
-    let imageSection;
-    if (image2) {
-        imageSection = (
-            <>
-                <div className="portfolio-details-slider swiper">
-                    <div className="swiper-wrapper align-items-center">
-
-                        <div className="swiper-slide">
-                            <img src={image} alt=""/>
-                        </div>
-
-                        <div className="swiper-slide">
-                            <img src={image2} alt=""/>
-                        </div>
-
-                    </div>
-                    <div className="swiper-pagination"></div>
-                </div>
-            </>
-        );
-    } else {
-        imageSection = (
-            <>
-                <div className="portfolio-details-slider swiper">
-                    <div className="swiper-wrapper align-items-center">
-                        <img src={image} alt=""/>
-                    </div>
-                </div>
-            </>
-        );
-    }
+export const MemberDetail = () => {
+    const { actorId } = useParams();
+    console.log(actorId)
     return (
         <>
-            <section id="breadcrumbs" className="breadcrumbs">
-                <div className="container">
-                    <div className="d-flex justify-content-between align-items-center">
-                        <h2>배우 상세 소개</h2>
-                        <ol>
-                            <li><a href="index.html">Home</a></li>
-                            <li>출연진</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-            <section id="portfolio-details" className="portfolio-details">
-                <div className="container">
-                    <div className="row gy-4">
-                        <div className="col-lg-8">
-                            {imageSection}
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="portfolio-info">
-                                <h3>Actor Information</h3>
-                                <ul>
-                                    <li><strong>이름: </strong>{name}</li>
-                                    <li><strong>Instagram: </strong><a
-                                        href={instaUrl}> 링크 클릭</a></li>
-                                </ul>
-                            </div>
-                            <div className="portfolio-description">
-                                <h2>{role}</h2>
-                                <p>
-                                    “{comment}”
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </>
     );
-};
+}
+//
+// export const MemberDetail = ({imageName1, imageName2, name, role, comment, instaUrl}: props) => {
+//     SwiperCore.use([Navigation, Pagination, Autoplay]);
+//     React.useEffect(() => {
+//         new Swiper('.portfolio-details-slider', {
+//             speed: 400,
+//             loop: true,
+//             autoplay: {
+//                 delay: 5000,
+//                 disableOnInteraction: false
+//             },
+//             pagination: {
+//                 el: '.swiper-pagination',
+//                 type: 'bullets',
+//                 clickable: true
+//             }
+//         });
+//     }, []);
+//     const image = _.get(IMAGE_POLL, imageName1);
+//     const image2 = _.get(IMAGE_POLL, imageName2);
+//     let imageSection;
+//     if (image2) {
+//         imageSection = (
+//             <>
+//                 <div className="portfolio-details-slider swiper">
+//                     <div className="swiper-wrapper align-items-center">
+//
+//                         <div className="swiper-slide">
+//                             <img src={image} alt=""/>
+//                         </div>
+//
+//                         <div className="swiper-slide">
+//                             <img src={image2} alt=""/>
+//                         </div>
+//
+//                     </div>
+//                     <div className="swiper-pagination"></div>
+//                 </div>
+//             </>
+//         );
+//     } else {
+//         imageSection = (
+//             <>
+//                 <div className="portfolio-details-slider swiper">
+//                     <div className="swiper-wrapper align-items-center">
+//                         <img src={image} alt=""/>
+//                     </div>
+//                 </div>
+//             </>
+//         );
+//     }
+//     return (
+//         <>
+//             <section id="breadcrumbs" className="breadcrumbs">
+//                 <div className="container">
+//                     <div className="d-flex justify-content-between align-items-center">
+//                         <h2>배우 상세 소개</h2>
+//                         <ol>
+//                             <li><a href="index.html">Home</a></li>
+//                             <li>출연진</li>
+//                         </ol>
+//                     </div>
+//                 </div>
+//             </section>
+//             <section id="portfolio-details" className="portfolio-details">
+//                 <div className="container">
+//                     <div className="row gy-4">
+//                         <div className="col-lg-8">
+//                             {imageSection}
+//                         </div>
+//                         <div className="col-lg-4">
+//                             <div className="portfolio-info">
+//                                 <h3>Actor Information</h3>
+//                                 <ul>
+//                                     <li><strong>이름: </strong>{name}</li>
+//                                     <li><strong>Instagram: </strong><a
+//                                         href={instaUrl}> 링크 클릭</a></li>
+//                                 </ul>
+//                             </div>
+//                             <div className="portfolio-description">
+//                                 <h2>{role}</h2>
+//                                 <p>
+//                                     “{comment}”
+//                                 </p>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </section>
+//         </>
+//     );
+// };
