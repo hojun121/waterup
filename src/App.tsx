@@ -30,7 +30,8 @@ const App = () => {
                 <main id="main">
                     <Routes>
                         <Route path="/" element={wrappingComponent} />
-                        <Route path="/actor/:actorId" element={<MemberDetail/>} />
+                        <Route path="/waterUpActor/:role/:actorName" element={<MemberDetail/>} />
+                        <Route path="*" element={wrappingComponent}></Route>
                     </Routes>
                 </main>
                 <Copyright/>

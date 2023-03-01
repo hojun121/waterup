@@ -14,8 +14,6 @@ import l1 from "../img/portfolio/7. (가보어 부인) 안세영.jpg";
 import m1 from "../img/portfolio/8. (베르크만 부인) 이은진.png";
 import n1 from "../img/portfolio/9. (목사) 송서유.png";
 import o1 from "../img/portfolio/10. (쇼넨슈티히) 윤태흥.png";
-// import p1 from "../img/portfolio/11-1. (크뉘펠티크)박재연.png";
-// import q1 from "../img/portfolio/11-2 (크뉘펠티크) 오채율.png";
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-thumbnail.css';
@@ -30,7 +28,7 @@ export const Members = () => {
             id: '0',
             src: a1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">멜키어 役 김태현</a></h4>
+                <h4>멜키어 役 김태현</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -38,7 +36,7 @@ export const Members = () => {
             id: '1',
             src: b1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">벤들라 役 장수진</a></h4>
+                <h4>벤들라 役 장수진</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -46,7 +44,7 @@ export const Members = () => {
             id: '2',
             src: c1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">벤들라 役 주예진</a></h4>
+                <h4>벤들라 役 주예진</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -54,7 +52,7 @@ export const Members = () => {
             id: '3',
             src: d1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">모리츠 役 조하람</a></h4>
+                <h4>모리츠 役 조하람</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -62,7 +60,7 @@ export const Members = () => {
             id: '4',
             src: e1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">모리츠 役 주재현</a></h4>
+                <h4>모리츠 役 주재현</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -70,7 +68,7 @@ export const Members = () => {
             id: '5',
             src: f1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">마르타/테아 役 최은진</a></h4>
+                <h4>마르타/테아 役 최은진</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -78,7 +76,7 @@ export const Members = () => {
             id: '6',
             src: g1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">마르타/테아 役 한송연</a></h4>
+                <h4>마르타/테아 役 한송연</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -86,7 +84,7 @@ export const Members = () => {
             id: '7',
             src: h1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">게오르크 役 박지수</a></h4>
+                <h4>게오르크 役 박지수</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -94,7 +92,7 @@ export const Members = () => {
             id: '8',
             src: i1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">게오르크 役 이승준</a></h4>
+                <h4>게오르크 役 이승준</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -102,7 +100,7 @@ export const Members = () => {
             id: '9',
             src: j1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">일세 役 박재연</a></h4>
+                <h4>일세 役 박재연</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -110,7 +108,7 @@ export const Members = () => {
             id: '10',
             src: k1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">일세 役 오채율</a></h4>
+                <h4>일세 役 오채율</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -118,7 +116,7 @@ export const Members = () => {
             id: '11',
             src: l1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">가보어 부인 役 안세영</a></h4>
+                <h4>가보어 부인 役 안세영</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -126,7 +124,7 @@ export const Members = () => {
             id: '12',
             src: m1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">베르크만 부인 役 이은진</a></h4>
+                <h4>베르크만 부인 役 이은진</h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -134,7 +132,7 @@ export const Members = () => {
             id: '13',
             src: n1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">목사 役 송서유</a></h4>
+                <h4>목사 役 송서유</Link></h4>
                 <p>극단 물오름</p>
             </div>`,
         },
@@ -142,7 +140,7 @@ export const Members = () => {
             id: '14',
             src: o1,
             subHtml: `<div class="lightGallery-captions">
-                <h4><a href="portfolio-details-1.html">쇼넨슈티히 役 윤태흥</a></h4>
+                <h4>쇼넨슈티히 役 윤태흥</a></h4>
                 <p>극단 물오름</p>
             </div>`,
         }
@@ -188,7 +186,7 @@ export const Members = () => {
                                 <img src={a1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/0">
+                                    <Link to="/waterUpActor/멜키어/김태현">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -202,7 +200,7 @@ export const Members = () => {
                                 <img src={b1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(1)} title="벤들라 役 장수진"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/1">
+                                    <Link to="/waterUpActor/벤들라/장수진">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -216,7 +214,7 @@ export const Members = () => {
                                 <img src={c1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(2)} title="벤들라 役 주예진"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/2">
+                                    <Link to="/waterUpActor/벤들라/주예진">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -230,7 +228,7 @@ export const Members = () => {
                                 <img src={d1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(3)} title="모리츠 役 조하람"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/3">
+                                    <Link to="/waterUpActor/모리츠/조하람">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -244,7 +242,7 @@ export const Members = () => {
                                 <img src={e1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(4)} title="모리츠 役 주재현"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/4">
+                                    <Link to="/waterUpActor/모리츠/주재현">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -257,9 +255,9 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={f1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(5)} title="마르타/테아 役 최은진"><i
+                                    <a onClick={() => openGallery(5)} title="마르타&테아 役 최은진"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/5">
+                                    <Link to="/waterUpActor/마르타&테아/최은진">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -272,9 +270,9 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={g1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(6)} title="마르타/테아 役 한송연"><i
+                                    <a onClick={() => openGallery(6)} title="마르타&테아 役 한송연"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/6">
+                                    <Link to="/waterUpActor/마르타&테아/한송연">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -288,7 +286,7 @@ export const Members = () => {
                                 <img src={h1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(7)} title="게오르크 役 박지수"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/7">
+                                    <Link to="/waterUpActor/게오르크/박지수">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -302,7 +300,7 @@ export const Members = () => {
                                 <img src={i1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(8)} title="게오르크 役 이승준"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/8">
+                                    <Link to="/waterUpActor/게오르크/이승준">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -315,9 +313,9 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={j1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(9)} title="일세 役 박재연"><i
+                                    <a onClick={() => openGallery(9)} title="일세&크뉘펠티크 役 박재연"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/9">
+                                    <Link to="/waterUpActor/일세&크뉘펠티크/박재연">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -330,8 +328,8 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={k1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(10)} title="일세 役 오채율"><i className="bx bx-plus"></i></a>
-                                    <Link to="/actor/10">
+                                    <a onClick={() => openGallery(10)} title="일세&크뉘펠티크 役 오채율"><i className="bx bx-plus"></i></a>
+                                    <Link to="/waterUpActor/일세&크뉘펠티크/오채율">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -346,7 +344,7 @@ export const Members = () => {
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(11)} title="가보어 부인 役 안세영"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/11">
+                                    <Link to="/waterUpActor/가보어 부인/안세영">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -361,7 +359,7 @@ export const Members = () => {
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(12)} title="베르크만 부인 役 이은진"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/12">
+                                    <Link to="/waterUpActor/베르크만 부인/이은진">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -376,7 +374,7 @@ export const Members = () => {
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(13)} title="목사 役 송서유"><i
                                         className="bx bx-plus"></i></a>
-                                    <Link to="/actor/13">
+                                    <Link to="/waterUpActor/목사/송서유">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
@@ -392,7 +390,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(14)} title="쇼넨슈티히 役 윤태흥">
                                         <i className="bx bx-plus" />
                                     </a>
-                                    <Link to="/actor/14">
+                                    <Link to="/waterUpActor/쇼넨슈티히/윤태흥">
                                         <a title="상세보기">
                                             <i className="bx bx-link" />
                                         </a>
