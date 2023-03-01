@@ -16,238 +16,347 @@ import n1 from "../img/portfolio/9. (목사) 송서유.png";
 import o1 from "../img/portfolio/10. (쇼넨슈티히) 윤태흥.png";
 // import p1 from "../img/portfolio/11-1. (크뉘펠티크)박재연.png";
 // import q1 from "../img/portfolio/11-2 (크뉘펠티크) 오채율.png";
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/scss/lightgallery.scss';
 
 export const Members = () => {
-    // React.useEffect(() => {
-    //     // console.log(GLightbox);
-    //     GLightbox({
-    //           selector: '.portfolio-lightbox'
-    //     });
-    // }, []);
-  return (
-      <>
-          <section id="portfolio" className="portfolio section-bg">
-              <div className="container">
-                  <div className="section-title">
-                      <h2>출연진</h2>
-                  </div>
-                  <div className="row" data-aos="fade-up">
-                      <div className="col-lg-12 d-flex justify-content-center">
-                          <ul id="portfolio-flters">
-                              <li data-filter="*" className="filter-active">All</li>
-                              <li data-filter=".filter-a">멜키어</li>
-                              <li data-filter=".filter-b">벤들라</li>
-                              <li data-filter=".filter-c">모리츠</li>
-                              <li data-filter=".filter-d">마르타 / 테아</li>
-                              <li data-filter=".filter-e">게오르크</li>
-                              <li data-filter=".filter-f">일세 / 크뉘펠티크</li>
-                              <li data-filter=".filter-g">가보어 부인</li>
-                              <li data-filter=".filter-h">베르크만 부인</li>
-                              <li data-filter=".filter-i">목사</li>
-                              <li data-filter=".filter-j">쇼넨슈티히</li>
-                          </ul>
-                      </div>
-                  </div>
+    const lightGallery = React.useRef<any>(null);
 
-                  <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+    const items = [
+        {
+            id: '0',
+            src: a1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">멜키어 役 김태현</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '1',
+            src: b1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">벤들라 役 장수진</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '2',
+            src: c1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">벤들라 役 주예진</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '3',
+            src: d1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">모리츠 役 조하람</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '4',
+            src: e1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">모리츠 役 주재현</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '5',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">마르타/테아 役 최은진</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '6',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">마르타/테아 役 한송연</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '7',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">게오르크 役 박지수</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '8',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">게오르크 役 이승준</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '9',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">일세 役 박재연</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '10',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">일세 役 오채율</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '11',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">가보어 부인 役 안세영</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '12',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">베르크만 부인 役 이은진</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '13',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">목사 役 송서유</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        },
+        {
+            id: '14',
+            src: f1,
+            subHtml: `<div class="lightGallery-captions">
+                <h4><a href="portfolio-details-1.html">쇼넨슈티히 役 윤태흥</a></h4>
+                <p>극단 물오름</p>
+            </div>`,
+        }
+    ];
+    const openGallery = React.useCallback((idx: number) => {
+        lightGallery.current.openGallery(idx);
+    }, []);
+    const onInit = React.useCallback((detail: any) => {
+        if (detail) {
+            lightGallery.current = detail.instance;
+        }
+    }, []);
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-a">
-                          <div className="portfolio-wrap">
-                              <img src={a1} className="img-fluid" alt=""/>
-                                  <div className="portfolio-links">
-                                      <a href={a1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-1.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+    return (
+        <>
+            <section id="portfolio" className="portfolio section-bg">
+                <div className="container">
+                    <div className="section-title">
+                        <h2>출연진</h2>
+                    </div>
+                    <div className="row" data-aos="fade-up">
+                        <div className="col-lg-12 d-flex justify-content-center">
+                            <ul id="portfolio-flters">
+                                <li data-filter="*" className="filter-active">All</li>
+                                <li data-filter=".filter-a">멜키어</li>
+                                <li data-filter=".filter-b">벤들라</li>
+                                <li data-filter=".filter-c">모리츠</li>
+                                <li data-filter=".filter-d">마르타 / 테아</li>
+                                <li data-filter=".filter-e">게오르크</li>
+                                <li data-filter=".filter-f">일세 / 크뉘펠티크</li>
+                                <li data-filter=".filter-g">가보어 부인</li>
+                                <li data-filter=".filter-h">베르크만 부인</li>
+                                <li data-filter=".filter-i">목사</li>
+                                <li data-filter=".filter-j">쇼넨슈티히</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-b">
-                          <div className="portfolio-wrap">
-                              <img src={b1} className="img-fluid" alt=""/>
-                                  <div className="portfolio-links">
-                                      <a href={b1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="벤들라 役 장수진"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-2.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-b">
-                          <div className="portfolio-wrap">
-                              <img src={c1} className="img-fluid" alt=""/>
-                                  <div className="portfolio-links">
-                                      <a href={c1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="벤들라 役 주예진"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-3.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-a">
+                            <div className="portfolio-wrap">
+                                <img src={a1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-1.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-c">
-                          <div className="portfolio-wrap">
-                              <img src={d1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={d1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="모리츠 役 조하람"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-4.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-b">
+                            <div className="portfolio-wrap">
+                                <img src={b1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(1)} title="벤들라 役 장수진"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-2.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-c">
-                          <div className="portfolio-wrap">
-                              <img src={e1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={e1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="모리츠 役 주재현"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-5.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-b">
+                            <div className="portfolio-wrap">
+                                <img src={c1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(2)} title="벤들라 役 주예진"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-3.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-d">
-                          <div className="portfolio-wrap">
-                              <img src={f1} className="img-fluid" alt=""/>
-                                  <div className="portfolio-links">
-                                      <a href={f1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="마르타/테아 役 최은진"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-6.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-c">
+                            <div className="portfolio-wrap">
+                                <img src={d1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(3)} title="모리츠 役 조하람"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-4.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-d">
-                          <div className="portfolio-wrap">
-                              <img src={g1} className="img-fluid" alt=""/>
-                                  <div className="portfolio-links">
-                                      <a href={g1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="마르타/테아 役 한송연"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-7.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-c">
+                            <div className="portfolio-wrap">
+                                <img src={e1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(4)} title="모리츠 役 주재현"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-5.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-e">
-                          <div className="portfolio-wrap">
-                              <img src={h1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={h1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="게오르크 役 박지수"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-8.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-d">
+                            <div className="portfolio-wrap">
+                                <img src={f1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(5)} title="마르타/테아 役 최은진"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-6.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-e">
-                          <div className="portfolio-wrap">
-                              <img src={i1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={i1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="게오르크 役 이승준"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-9.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-d">
+                            <div className="portfolio-wrap">
+                                <img src={g1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(6)} title="마르타/테아 役 한송연"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-7.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-f">
-                          <div className="portfolio-wrap">
-                              <img src={j1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={j1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="일세 役 박재연"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-10.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-e">
+                            <div className="portfolio-wrap">
+                                <img src={h1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(7)} title="게오르크 役 박지수"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-8.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-f">
-                          <div className="portfolio-wrap">
-                              <img src={k1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={k1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="일세 役 오채율"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-11.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-e">
+                            <div className="portfolio-wrap">
+                                <img src={i1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(8)} title="게오르크 役 이승준"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-9.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-g">
-                          <div className="portfolio-wrap">
-                              <img src={l1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={l1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="가보어 부인 役 안세영"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-12.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-f">
+                            <div className="portfolio-wrap">
+                                <img src={j1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(9)} title="일세 役 박재연"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-10.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-h">
-                          <div className="portfolio-wrap">
-                              <img src={m1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={m1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="베르크만 부인 役 이은진"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-13.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-f">
+                            <div className="portfolio-wrap">
+                                <img src={k1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(10)} title="일세 役 오채율"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-11.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-i">
-                          <div className="portfolio-wrap">
-                              <img src={n1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={n1} data-gallery="portfolioGallery"
-                                         className="portfolio-lightbox" title="목사 役 송서유"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-14.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-g">
+                            <div className="portfolio-wrap">
+                                <img src={l1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(11)} title="가보어 부인 役 안세영"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-12.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-                      <div className="col-lg-4 col-md-6 portfolio-item filter-j">
-                          <div className="portfolio-wrap">
-                              <img src={o1} className="img-fluid" alt="" />
-                                  <div className="portfolio-links">
-                                      <a href={o1}
-                                         data-gallery="portfolioGallery" className="portfolio-lightbox"
-                                         title="쇼넨슈티히 役 윤태흥"><i className="bx bx-plus"></i></a>
-                                      <a href="portfolio-details-15.html" title="More Details"><i
-                                          className="bx bx-link"></i></a>
-                                  </div>
-                          </div>
-                      </div>
-                  </div>
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-h">
+                            <div className="portfolio-wrap">
+                                <img src={m1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(12)} title="베르크만 부인 役 이은진"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-13.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
 
-              </div>
-          </section>
-      </>
-  );
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-i">
+                            <div className="portfolio-wrap">
+                                <img src={n1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(13)} title="목사 役 송서유"><i
+                                        className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-14.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-j">
+                            <div className="portfolio-wrap">
+                                <img src={o1} className="img-fluid" alt=""/>
+                                <div className="portfolio-links">
+                                    <a onClick={() => openGallery(14)} title="쇼넨슈티히 役 윤태흥"><i className="bx bx-plus"></i></a>
+                                    <a href="portfolio-details-15.html" title="상세보기"><i
+                                        className="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <LightGallery
+                            elementClassNames="custom-classname"
+                            dynamic
+                            dynamicEl={items}
+                            onInit={onInit}
+                            download={false}
+                        ></LightGallery>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
 };
