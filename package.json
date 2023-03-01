@@ -10,7 +10,9 @@
     "@types/node": "^16.18.13",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "aos": "^2.3.4",
     "install": "^0.13.0",
+    "isotope-layout": "^3.0.6",
     "lightgallery": "^2.7.1",
     "lodash": "^4.17.21",
     "npm": "^9.5.1",
@@ -50,7 +52,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
-    "@types/isotope-layout": "^3.0.9",
+    "@types/isotope-layout": "^3.0.6",
     "@types/lodash": "^4.14.191"
   }
 }

@@ -18,11 +18,14 @@ import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/scss/lightgallery.scss';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import Isotope from "isotope-layout";
+import AOS from "aos";
 
 export const Members = () => {
     const lightGallery = React.useRef<any>(null);
 
+    const hasRunOnce = React.useRef(false);
     const items = [
         {
             id: '0',
@@ -153,6 +156,57 @@ export const Members = () => {
             lightGallery.current = detail.instance;
         }
     }, []);
+    // window.addEventListener('load', () => {
+    //     let portfolioContainer = select('.portfolio-container');
+    //     if (portfolioContainer) {
+    //         let portfolioIsotope = new Isotope(portfolioContainer, {
+    //             itemSelector: '.portfolio-item'
+    //         });
+    //
+    //         let portfolioFilters = select('#portfolio-flters li', true);
+    //
+    //         on('click', '#portfolio-flters li', function (e: any) {
+    //             e.preventDefault();
+    //             portfolioFilters.forEach(function (el: any) {
+    //                 el.classList.remove('filter-active');
+    //             });
+    //             // @ts-ignore
+    //             this.classList.add('filter-active');
+    //
+    //             portfolioIsotope.arrange({
+    //                 // @ts-ignore
+    //                 filter: this.getAttribute('data-filter')
+    //             });
+    //             // portfolioIsotope.on('arrangeComplete', function() {
+    //             //     AOS.refresh()
+    //             // });
+    //         }, true);
+    //     }
+    // });
+    // init one ref to store the future isotope object
+    const isotope = React.useRef<Isotope | null>();
+    // store the filter keyword in a state
+    const [filterKey, setFilterKey] = React.useState("*");
+
+    // initialize an Isotope object with configs
+    React.useEffect(() => {
+        isotope.current = new Isotope(".portfolio-container", {
+            itemSelector: ".portfolio-item",
+            layoutMode: 'fitRows',
+        });
+        // cleanup
+        return () => {
+            isotope.current?.destroy();
+            AOS.refresh();
+        }
+    }, []);
+
+    // handling filter key change
+    React.useEffect(() => {
+        isotope.current?.arrange({filter: `${filterKey}`});
+    }, [filterKey]);
+
+    const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
 
     return (
         <>
@@ -164,17 +218,17 @@ export const Members = () => {
                     <div className="row" data-aos="fade-up">
                         <div className="col-lg-12 d-flex justify-content-center">
                             <ul id="portfolio-flters">
-                                <li data-filter="*" className="filter-active">All</li>
-                                <li data-filter=".filter-a">멜키어</li>
-                                <li data-filter=".filter-b">벤들라</li>
-                                <li data-filter=".filter-c">모리츠</li>
-                                <li data-filter=".filter-d">마르타 / 테아</li>
-                                <li data-filter=".filter-e">게오르크</li>
-                                <li data-filter=".filter-f">일세 / 크뉘펠티크</li>
-                                <li data-filter=".filter-g">가보어 부인</li>
-                                <li data-filter=".filter-h">베르크만 부인</li>
-                                <li data-filter=".filter-i">목사</li>
-                                <li data-filter=".filter-j">쇼넨슈티히</li>
+                                <li onClick={handleFilterKeyChange("*")} className="filter-active">All</li>
+                                <li onClick={handleFilterKeyChange(".filter-a")}>멜키어</li>
+                                <li onClick={handleFilterKeyChange(".filter-b")}>벤들라</li>
+                                <li onClick={handleFilterKeyChange(".filter-c")}>모리츠</li>
+                                <li onClick={handleFilterKeyChange(".filter-d")}>마르타 / 테아</li>
+                                <li onClick={handleFilterKeyChange(".filter-e")}>게오르크</li>
+                                <li onClick={handleFilterKeyChange(".filter-f")}>일세 / 크뉘펠티크</li>
+                                <li onClick={handleFilterKeyChange(".filter-g")}>가보어 부인</li>
+                                <li onClick={handleFilterKeyChange(".filter-h")}>베르크만 부인</li>
+                                <li onClick={handleFilterKeyChange(".filter-i")}>목사</li>
+                                <li onClick={handleFilterKeyChange(".filter-j")}>쇼넨슈티히</li>
                             </ul>
                         </div>
                     </div>
@@ -188,7 +242,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/멜키어/김태현">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -202,7 +256,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(1)} title="벤들라 役 장수진"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/벤들라/장수진">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -216,7 +270,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(2)} title="벤들라 役 주예진"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/벤들라/주예진">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -230,7 +284,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(3)} title="모리츠 役 조하람"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/모리츠/조하람">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -244,7 +298,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(4)} title="모리츠 役 주재현"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/모리츠/주재현">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -259,7 +313,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/마르타&테아/최은진">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -274,7 +328,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/마르타&테아/한송연">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -288,7 +342,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(7)} title="게오르크 役 박지수"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/게오르크/박지수">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -302,7 +356,7 @@ export const Members = () => {
                                     <a onClick={() => openGallery(8)} title="게오르크 役 이승준"><i className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/게오르크/이승준">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -317,7 +371,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/일세&크뉘펠티크/박재연">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -328,10 +382,11 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={k1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(10)} title="일세&크뉘펠티크 役 오채율"><i className="bx bx-plus"></i></a>
+                                    <a onClick={() => openGallery(10)} title="일세&크뉘펠티크 役 오채율"><i
+                                        className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/일세&크뉘펠티크/오채율">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -346,7 +401,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/가보어 부인/안세영">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -361,7 +416,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/베르크만 부인/이은진">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -376,7 +431,7 @@ export const Members = () => {
                                         className="bx bx-plus"></i></a>
                                     <Link to="/waterUpActor/목사/송서유">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>
@@ -388,11 +443,11 @@ export const Members = () => {
                                 <img src={o1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(14)} title="쇼넨슈티히 役 윤태흥">
-                                        <i className="bx bx-plus" />
+                                        <i className="bx bx-plus"/>
                                     </a>
                                     <Link to="/waterUpActor/쇼넨슈티히/윤태흥">
                                         <a title="상세보기">
-                                            <i className="bx bx-link" />
+                                            <i className="bx bx-link"/>
                                         </a>
                                     </Link>
                                 </div>

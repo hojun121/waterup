@@ -1,8 +1,12 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Isotope from "isotope-layout";
+import 'aos/dist/aos';
 
 export const Initializer = () => {
     const hasRunOnce = React.useRef(false);
-    const arrayDistinct = (list: NodeListOf<any>):any[] => {
+    const arrayDistinct = (list: NodeListOf<any>): any[] => {
         const result = [];
         for (var i = 0; i < list.length; i++) {
             var value = list[i];
@@ -69,14 +73,14 @@ export const Initializer = () => {
                 window.addEventListener('load', toggleBacktotop)
                 onscroll(document, toggleBacktotop)
             }
-            on('click', '.mobile-nav-toggle', function(e: any) {
+            on('click', '.mobile-nav-toggle', function (e: any) {
                 select('body').classList.toggle('mobile-nav-active')
                 // @ts-ignore
                 this.classList.toggle('bi-list')
                 // @ts-ignore
                 this.classList.toggle('bi-x')
             })
-            on('click', '.scrollto', function(e: any) {
+            on('click', '.scrollto', function (e: any) {
                 // @ts-ignore
                 if (select(this.hash)) {
                     e.preventDefault()
@@ -92,13 +96,60 @@ export const Initializer = () => {
                     scrollto(this.hash)
                 }
             }, true)
-            window.addEventListener('load', () => {
-                if (window.location.hash) {
-                    if (select(window.location.hash)) {
-                        scrollto(window.location.hash)
-                    }
+
+            if (window.location.hash) {
+                if (select(window.location.hash)) {
+                    scrollto(window.location.hash)
                 }
-            });
+            }
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            })
+            // window.addEventListener('load', () => {
+            //     let portfolioContainer = select('.portfolio-container');
+            //     if (portfolioContainer) {
+            //         let portfolioIsotope = new Isotope(portfolioContainer, {
+            //             itemSelector: '.portfolio-item'
+            //         });
+            //
+            //         let portfolioFilters = select('#portfolio-flters li', true);
+            //
+            //         on('click', '#portfolio-flters li', function (e: any) {
+            //             e.preventDefault();
+            //             portfolioFilters.forEach(function (el: any) {
+            //                 el.classList.remove('filter-active');
+            //             });
+            //             // @ts-ignore
+            //             this.classList.add('filter-active');
+            //
+            //             portfolioIsotope.arrange({
+            //                 // @ts-ignore
+            //                 filter: this.getAttribute('data-filter')
+            //             });
+            //             // portfolioIsotope.on('arrangeComplete', function() {
+            //             //     AOS.refresh()
+            //             // });
+            //         }, true);
+            //     }
+            // });
+            let portfolioContainer = select('.portfolio-container');
+            if (portfolioContainer) {
+
+                let portfolioFilters = select('#portfolio-flters li', true);
+
+                on('click', '#portfolio-flters li', function (e: any) {
+                    e.preventDefault();
+                    portfolioFilters.forEach(function (el: any) {
+                        el.classList.remove('filter-active');
+                    });
+                    // @ts-ignore
+                    this.classList.add('filter-active');
+
+                }, true);
+            }
             hasRunOnce.current = true;
         }
     }, []);

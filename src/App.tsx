@@ -7,12 +7,10 @@ import {Reserve} from "./component/Reserve";
 import {Members} from "./component/Members";
 import {Location} from "./component/Location";
 import {Copyright} from "./component/Copyright";
-import {Initializer} from "./initializer/Initializer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {MemberDetail} from "./component/MemberDetail";
 
 const App = () => {
-    Initializer();
     const wrappingComponent = (
         <>
             <Introduce/>
