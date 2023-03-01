@@ -19,8 +19,11 @@ import o1 from "../img/portfolio/10. (쇼넨슈티히) 윤태흥.png";
 import p1 from "../img/portfolio/11-1. (크뉘펠티크)박재연.png";
 import q1 from "../img/portfolio/11-2 (크뉘펠티크) 오채율.png";
 import Swiper from "swiper";
+import "swiper/swiper-bundle.min.css"
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 
 export const Introduce = () => {
+    SwiperCore.use([Navigation, Pagination, Autoplay]);
     useEffect(() => {
         new Swiper('.testimonials-slider', {
             speed: 600,
@@ -31,8 +34,7 @@ export const Introduce = () => {
             },
             slidesPerView: 'auto',
             pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
+                el: ".swiper-pagination",
                 clickable: true,
             },
             breakpoints: {
@@ -40,9 +42,8 @@ export const Introduce = () => {
                     slidesPerView: 1,
                     spaceBetween: 20
                 },
-
                 1200: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 20
                 }
             }
@@ -101,7 +102,6 @@ export const Introduce = () => {
                                     <h4>장수진</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                                     <p>
@@ -114,7 +114,6 @@ export const Introduce = () => {
                                     <h4>주예진</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="300">
                                     <p>
@@ -127,7 +126,6 @@ export const Introduce = () => {
                                     <h4>최은진</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="400">
                                     <p>
@@ -140,7 +138,6 @@ export const Introduce = () => {
                                     <h4>한송연</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="500">
                                     <p>
@@ -153,7 +150,6 @@ export const Introduce = () => {
                                     <h4>조하람</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="600">
                                     <p>
@@ -166,7 +162,6 @@ export const Introduce = () => {
                                     <h4>주재현</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="700">
                                     <p>
@@ -179,7 +174,6 @@ export const Introduce = () => {
                                     <h4>오채율</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="800">
                                     <p>
@@ -192,7 +186,6 @@ export const Introduce = () => {
                                     <h4>박재연</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="900">
                                     <p>
@@ -205,7 +198,6 @@ export const Introduce = () => {
                                     <h4>박재연</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="1000">
                                     <p>
@@ -218,7 +210,6 @@ export const Introduce = () => {
                                     <h4>오채율</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="1100">
                                     <p>
@@ -231,7 +222,6 @@ export const Introduce = () => {
                                     <h4>송서유</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="1200">
                                     <p>
@@ -244,7 +234,6 @@ export const Introduce = () => {
                                     <h4>이은진</h4>
                                 </div>
                             </div>
-
                             <div className="swiper-slide">
                                 <div className="testimonial-item" data-aos="fade-up" data-aos-delay="1300">
                                     <p>
@@ -294,8 +283,8 @@ export const Introduce = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="swiper-pagination"></div>
                     </div>
-                    <div className="swiper-pagination" ></div>
                 </div>
             </section>
         </>
