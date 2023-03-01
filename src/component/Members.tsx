@@ -18,6 +18,12 @@ import o1 from "../img/portfolio/10. (쇼넨슈티히) 윤태흥.png";
 // import q1 from "../img/portfolio/11-2 (크뉘펠티크) 오채율.png";
 
 export const Members = () => {
+    // React.useEffect(() => {
+    //     // console.log(GLightbox);
+    //     GLightbox({
+    //           selector: '.portfolio-lightbox'
+    //     });
+    // }, []);
   return (
       <>
           <section id="portfolio" className="portfolio section-bg">
