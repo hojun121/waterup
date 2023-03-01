@@ -1,6 +1,6 @@
 import MainPoster from "../img/main-poster.png";
 import Story from "../img/story.png";
-import React, {useEffect} from "react";
+import React from "react";
 import a1 from "../img/portfolio/1. (멜키어) 김태현.png";
 import b1 from "../img/portfolio/2-1. (벤들라) 장수진.png";
 import c1 from "../img/portfolio/2-2. (벤들라) 주예진.png";
@@ -24,7 +24,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 
 export const Introduce = () => {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
-    useEffect(() => {
+    React.useEffect(() => {
         new Swiper('.testimonials-slider', {
             speed: 600,
             loop: true,
