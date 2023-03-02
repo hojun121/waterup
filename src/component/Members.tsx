@@ -20,12 +20,11 @@ import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/scss/lightgallery.scss';
 import {Link} from "react-router-dom";
 import Isotope from "isotope-layout";
-import AOS from "aos";
+import {useOnLoadImages} from "../hooks/useOnLoadImages";
 
 export const Members = () => {
     const lightGallery = React.useRef<any>(null);
 
-    const hasRunOnce = React.useRef(false);
     const items = [
         {
             id: '0',
@@ -156,61 +155,36 @@ export const Members = () => {
             lightGallery.current = detail.instance;
         }
     }, []);
-    // window.addEventListener('load', () => {
-    //     let portfolioContainer = select('.portfolio-container');
-    //     if (portfolioContainer) {
-    //         let portfolioIsotope = new Isotope(portfolioContainer, {
-    //             itemSelector: '.portfolio-item'
-    //         });
-    //
-    //         let portfolioFilters = select('#portfolio-flters li', true);
-    //
-    //         on('click', '#portfolio-flters li', function (e: any) {
-    //             e.preventDefault();
-    //             portfolioFilters.forEach(function (el: any) {
-    //                 el.classList.remove('filter-active');
-    //             });
-    //             // @ts-ignore
-    //             this.classList.add('filter-active');
-    //
-    //             portfolioIsotope.arrange({
-    //                 // @ts-ignore
-    //                 filter: this.getAttribute('data-filter')
-    //             });
-    //             // portfolioIsotope.on('arrangeComplete', function() {
-    //             //     AOS.refresh()
-    //             // });
-    //         }, true);
-    //     }
-    // });
-    // init one ref to store the future isotope object
-    const isotope = React.useRef<Isotope | null>();
+
+    const wrapperRef = React.useRef<HTMLDivElement>(null);
+    const imagesLoaded = useOnLoadImages(wrapperRef);
+    const [isotope, setIsotope] = React.useState<Isotope>();
     // store the filter keyword in a state
     const [filterKey, setFilterKey] = React.useState("*");
 
     // initialize an Isotope object with configs
     React.useEffect(() => {
-        isotope.current = new Isotope(".portfolio-container", {
-            itemSelector: ".portfolio-item",
-            layoutMode: 'fitRows',
-        });
-        // cleanup
-        return () => {
-            isotope.current?.destroy();
-            AOS.refresh();
+        if (imagesLoaded) {
+            setIsotope(new Isotope(".portfolio-container", {
+                itemSelector: ".portfolio-item",
+                layoutMode: 'fitRows',
+            }));
         }
-    }, []);
+    }, [imagesLoaded]);
 
-    // handling filter key change
     React.useEffect(() => {
-        isotope.current?.arrange({filter: `${filterKey}`});
-    }, [filterKey]);
+        if (isotope) {
+            filterKey === '*'
+                ? isotope.arrange({ filter: `*` })
+                : isotope.arrange({ filter: `${filterKey}` });
+        }
+    }, [isotope, filterKey]);
 
     const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
 
     return (
         <>
-            <section id="portfolio" className="portfolio section-bg">
+            <section id="portfolio" className="portfolio section-bg" >
                 <div className="container">
                     <div className="section-title">
                         <h2>출연진</h2>
@@ -232,9 +206,7 @@ export const Members = () => {
                             </ul>
                         </div>
                     </div>
-
-                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
+                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100" ref={wrapperRef}>
                         <div className="col-lg-4 col-md-6 portfolio-item filter-a">
                             <div className="portfolio-wrap">
                                 <img src={a1} className="img-fluid" alt=""/>

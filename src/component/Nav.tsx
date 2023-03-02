@@ -1,6 +1,6 @@
 import React from "react";
 import MainPoster from "../img/main-poster.png";
-import {Initializer} from "../initializer/Initializer";
+import {Initializer} from "../util/Initializer";
 
 export const Nav = () => {
     Initializer();

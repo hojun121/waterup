@@ -1,7 +1,6 @@
 import React from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Isotope from "isotope-layout";
 import 'aos/dist/aos';
 
 export const Initializer = () => {
@@ -108,33 +107,7 @@ export const Initializer = () => {
                 once: true,
                 mirror: false
             })
-            // window.addEventListener('load', () => {
-            //     let portfolioContainer = select('.portfolio-container');
-            //     if (portfolioContainer) {
-            //         let portfolioIsotope = new Isotope(portfolioContainer, {
-            //             itemSelector: '.portfolio-item'
-            //         });
-            //
-            //         let portfolioFilters = select('#portfolio-flters li', true);
-            //
-            //         on('click', '#portfolio-flters li', function (e: any) {
-            //             e.preventDefault();
-            //             portfolioFilters.forEach(function (el: any) {
-            //                 el.classList.remove('filter-active');
-            //             });
-            //             // @ts-ignore
-            //             this.classList.add('filter-active');
-            //
-            //             portfolioIsotope.arrange({
-            //                 // @ts-ignore
-            //                 filter: this.getAttribute('data-filter')
-            //             });
-            //             // portfolioIsotope.on('arrangeComplete', function() {
-            //             //     AOS.refresh()
-            //             // });
-            //         }, true);
-            //     }
-            // });
+
             let portfolioContainer = select('.portfolio-container');
             if (portfolioContainer) {
 
