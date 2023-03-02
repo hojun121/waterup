@@ -28,11 +28,21 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  font-family: "kcc", sans-serif;
+}
+h2 {
+  font-family: "kcc", sans-serif;
+}
+h3{
+  font-family: "kcc", sans-serif;
+}
+h4{
+  font-family: "kcc", sans-serif;
+}
+h5{
+  font-family: "kcc", sans-serif;
+}
 h6 {
   font-family: "kcc", sans-serif;
 }
@@ -285,11 +295,13 @@ h6 {
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
+    font-family: "kcc", sans-serif;
     line-height: 36px;
   }
 
   #hero h2 {
     font-size: 18px;
+    font-family: "kcc", sans-serif;
     line-height: 24px;
     margin-bottom: 30px;
   }
