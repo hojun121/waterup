@@ -1,4 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'boxicons/css/boxicons.min.css';
+import 'react-bootstrap-icons';
 import {Nav} from "./component/Nav";
 import {Home} from "./component/Home";
 import {Introduce} from "./component/Introduce";
