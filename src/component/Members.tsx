@@ -161,10 +161,15 @@ export const Members = () => {
     const [isotope, setIsotope] = React.useState<Isotope>();
     // store the filter keyword in a state
     const [filterKey, setFilterKey] = React.useState("*");
-
     // initialize an Isotope object with configs
     React.useEffect(() => {
+        async function delay() {
+            await new Promise(
+                resolve => setTimeout(resolve, 500)
+            );
+        }
         if (imagesLoaded) {
+            delay();
             setIsotope(new Isotope(".portfolio-container", {
                 itemSelector: ".portfolio-item",
                 layoutMode: 'fitRows',

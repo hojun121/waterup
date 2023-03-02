@@ -6,7 +6,7 @@ export const useOnLoadImages = (ref: React.RefObject<HTMLElement>) => {
     React.useEffect(() => {
         const updateStatus = (images: HTMLImageElement[]) => {
             setStatus(
-                images.map((image) => image.complete).every((item) => item === true)
+                images.map((image) => image.complete).every((item) => item)
             );
         };
 
