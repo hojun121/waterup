@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-bootstrap-icons": "^1.10.2",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.4",
     "@types/isotope-layout": "^3.0.9",
-    "@types/lodash": "^4.14.191"
+    "@types/lodash": "^4.14.191",
+    "@types/react-copy-to-clipboard": "^5.0.4"
   }
 }

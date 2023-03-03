@@ -2,9 +2,19 @@ import React from "react";
 import MainPoster from "../img/main-poster.png";
 import {Initializer} from "../util/Initializer";
 import {useNavigate} from "react-router-dom";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 export const Nav = () => {
     Initializer();
+    const shareToTwitter = () => {
+        const sharedLink =
+            "text=" + encodeURIComponent("눈 뜨는 봄: 설강화" + " \n ") + encodeURIComponent("waterup.co.kr");
+        window.open(`https://twitter.com/intent/tweet?${sharedLink}`);
+    };
+    const shareToFacebook = () => {
+        const sharedLink = encodeURIComponent("waterup.co.kr");
+        window.open(`http://www.facebook.com/sharer/sharer.php?u=${sharedLink}`);
+    };
     return (
         <>
             <header id="header">
@@ -12,6 +22,14 @@ export const Nav = () => {
                     <div className="profile">
                         <img src={MainPoster} alt="" className="img-fluid rounded-circle"/>
                         <h1 className="text-light"><a href="#hero">눈 뜨는 봄: 설강화</a></h1>
+                        <div className="social-links mt-3 text-center">
+                            <a onClick={shareToTwitter} className="twitter"><i className="bx bxl-twitter"></i></a>
+                            <a onClick={shareToFacebook}><i className="bx bxl-facebook"></i></a>
+                            <CopyToClipboard text={"waterup.co.kr"} onCopy={()=>alert("홈페이지 주소가 복사되었습니다")}>
+                                <a><i className="bx bx-copy"></i></a>
+                            </CopyToClipboard>
+                            {/*<a href="#" className="instagram"><i className="bx bx-copy"></i></a>*/}
+                        </div>
                     </div>
                     <nav id="navbar" className="nav-menu navbar">
                         <ul>
