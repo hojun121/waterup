@@ -20,7 +20,7 @@ import * as _ from "lodash";
 import Swiper from "swiper";
 import "swiper/swiper-bundle.min.css"
 import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
-import {Link, useParams} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 
 const actorInfoPool = {
     "김태현": {
@@ -121,10 +121,15 @@ export const MemberDetail = () => {
             }
         });
     }, []);
-    const {role, actorName} = useParams();
+    // const {role, actorName} = useParams();
+
+    const location = useLocation();
+    const state = location.state as { role: string; name: string };
+    const { role, name } = state;
+
     let insta, com, com1, com2, img, img1, img2;
-    if (actorName) {
-        const { instaUrl, comment, comment1, comment2, image, image1, image2 } = _.get(actorInfoPool, actorName);
+    if (name) {
+        const { instaUrl, comment, comment1, comment2, image, image1, image2 } = _.get(actorInfoPool, name);
         insta = instaUrl;
         com = comment;
         com1 = comment1;
@@ -134,7 +139,7 @@ export const MemberDetail = () => {
         img2 = image2;
     }
     let imageSection, commentSection;
-    if (actorName === "박재연" || actorName === "오채율") {
+    if (name === "박재연" || name === "오채율") {
         imageSection = (
             <>
                 <div className="portfolio-details-slider swiper">
@@ -208,7 +213,7 @@ export const MemberDetail = () => {
                             <div className="portfolio-info">
                                 <h3>Actor Information</h3>
                                 <ul>
-                                    <li><strong>이름: </strong>{actorName}</li>
+                                    <li><strong>이름: </strong>{name}</li>
                                     <li><strong>Instagram: </strong><a
                                         href={insta}> 링크 클릭</a></li>
                                 </ul>

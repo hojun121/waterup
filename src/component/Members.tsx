@@ -18,13 +18,12 @@ import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/scss/lightgallery.scss';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Isotope from "isotope-layout";
 import {useOnLoadImages} from "../hooks/useOnLoadImages";
 
 export const Members = () => {
     const lightGallery = React.useRef<any>(null);
-
     const items = [
         {
             id: '0',
@@ -186,7 +185,15 @@ export const Members = () => {
     }, [isotope, filterKey]);
 
     const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
-
+    const navigate = useNavigate();
+    const move = (role: string, name: string) => {
+        navigate("/waterUpActor", {
+            state: {
+                role: role,
+                name: name,
+            }
+        })
+    };
     return (
         <>
             <section id="portfolio" className="portfolio section-bg" >
@@ -217,11 +224,11 @@ export const Members = () => {
                                 <img src={a1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/멜키어/김태현">
-                                        <a title="상세보기">
+                                    {/*<Link to="/waterUpActor/멜키어/김태현">*/}
+                                        <a onClick={() => move("멜키어", "김태현")} title="상세보기">
                                             <i className="bx bx-link"/>
                                         </a>
-                                    </Link>
+                                    {/*</Link>*/}
                                 </div>
                             </div>
                         </div>
