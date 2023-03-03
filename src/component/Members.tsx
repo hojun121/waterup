@@ -167,6 +167,7 @@ export const Members = () => {
                 resolve => setTimeout(resolve, 500)
             );
         }
+
         if (imagesLoaded) {
             delay();
             setIsotope(new Isotope(".portfolio-container", {
@@ -179,8 +180,8 @@ export const Members = () => {
     React.useEffect(() => {
         if (isotope) {
             filterKey === '*'
-                ? isotope.arrange({ filter: `*` })
-                : isotope.arrange({ filter: `${filterKey}` });
+                ? isotope.arrange({filter: `*`})
+                : isotope.arrange({filter: `${filterKey}`});
         }
     }, [isotope, filterKey]);
 
@@ -196,7 +197,7 @@ export const Members = () => {
     };
     return (
         <>
-            <section id="portfolio" className="portfolio section-bg" >
+            <section id="portfolio" className="portfolio section-bg">
                 <div className="container">
                     <div className="section-title">
                         <h2>출연진</h2>
@@ -223,12 +224,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={a1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-plus"></i></a>
-                                    {/*<Link to="/waterUpActor/멜키어/김태현">*/}
-                                        <a onClick={() => move("멜키어", "김태현")} title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    {/*</Link>*/}
+                                    <a onClick={() => openGallery(0)} title="멜키어 役 김태현"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("멜키어", "김태현")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -237,12 +236,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={b1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(1)} title="벤들라 役 장수진"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/벤들라/장수진">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(1)} title="벤들라 役 장수진"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("벤들라", "장수진")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -251,12 +248,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={c1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(2)} title="벤들라 役 주예진"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/벤들라/주예진">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(2)} title="벤들라 役 주예진"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("벤들라", "주예진")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -265,12 +260,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={d1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(3)} title="모리츠 役 조하람"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/모리츠/조하람">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(3)} title="모리츠 役 조하람"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("모리츠", "조하람")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -279,12 +272,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={e1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(4)} title="모리츠 役 주재현"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/모리츠/주재현">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(4)} title="모리츠 役 주재현"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("모리츠", "주재현")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -294,12 +285,10 @@ export const Members = () => {
                                 <img src={f1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(5)} title="마르타&테아 役 최은진"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/마르타&테아/최은진">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("마르타&테아", "최은진")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -309,12 +298,10 @@ export const Members = () => {
                                 <img src={g1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(6)} title="마르타&테아 役 한송연"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/마르타&테아/한송연">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("마르타&테아", "한송연")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -323,12 +310,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={h1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(7)} title="게오르크 役 박지수"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/게오르크/박지수">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(7)} title="게오르크 役 박지수"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("게오르크", "박지수")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -337,12 +322,10 @@ export const Members = () => {
                             <div className="portfolio-wrap">
                                 <img src={i1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a onClick={() => openGallery(8)} title="게오르크 役 이승준"><i className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/게오르크/이승준">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                    <a onClick={() => openGallery(8)} title="게오르크 役 이승준"><i className="bx bx-search"></i></a>
+                                    <a onClick={() => move("게오르크", "이승준")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -352,12 +335,10 @@ export const Members = () => {
                                 <img src={j1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(9)} title="일세&크뉘펠티크 役 박재연"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/일세&크뉘펠티크/박재연">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("일세&크뉘펠티크", "박재연")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -367,12 +348,10 @@ export const Members = () => {
                                 <img src={k1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(10)} title="일세&크뉘펠티크 役 오채율"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/일세&크뉘펠티크/오채율">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("일세&크뉘펠티크", "오채율")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -382,12 +361,10 @@ export const Members = () => {
                                 <img src={l1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(11)} title="가보어 부인 役 안세영"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/가보어 부인/안세영">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("가보어 부인", "안세영")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -397,12 +374,10 @@ export const Members = () => {
                                 <img src={m1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(12)} title="베르크만 부인 役 이은진"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/베르크만 부인/이은진">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("베르크만 부인", "이은진")} title="상세보기">
+                                        <i className="bx bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -412,12 +387,10 @@ export const Members = () => {
                                 <img src={n1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(13)} title="목사 役 송서유"><i
-                                        className="bx bx-plus"></i></a>
-                                    <Link to="/waterUpActor/목사/송서유">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
+                                        className="bx bx-search"></i></a>
+                                    <a onClick={() => move("목사", "송서유")} title="상세보기">
+                                        <i className="bx-plus"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -427,13 +400,11 @@ export const Members = () => {
                                 <img src={o1} className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
                                     <a onClick={() => openGallery(14)} title="쇼넨슈티히 役 윤태흥">
+                                        <i className="bx bx-search"/>
+                                    </a>
+                                    <a onClick={() => move("쇼넨슈티히", "윤태흥")} title="상세보기">
                                         <i className="bx bx-plus"/>
                                     </a>
-                                    <Link to="/waterUpActor/쇼넨슈티히/윤태흥">
-                                        <a title="상세보기">
-                                            <i className="bx bx-link"/>
-                                        </a>
-                                    </Link>
                                 </div>
                             </div>
                         </div>

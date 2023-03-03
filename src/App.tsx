@@ -34,7 +34,6 @@ const App = () => {
             <main id="main">
                 <MemberDetail/>
             </main>
-            <Copyright/>
         </>
     );
     return (
