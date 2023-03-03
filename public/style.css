@@ -46,6 +46,12 @@ h5{
 h6 {
   font-family: "kcc", sans-serif;
 }
+span {
+  font-family: "kcc", sans-serif;
+}
+p {
+  font-family: "kcc", sans-serif;
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -874,16 +880,15 @@ section {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   color: #050d18;
 }
 
 .contact .info p {
   padding: 0 0 10px 60px;
-  margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 20px;
   color: #173b6c;
 }
 

@@ -1,7 +1,7 @@
-import {useNavigate} from "react-router-dom";
+// import {useNavigate} from "react-router-dom";
 
 export const Copyright = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return (
         <>
             <footer id="footer">
@@ -10,7 +10,8 @@ export const Copyright = () => {
                         &copy; Copyright <strong><span>WaterUp</span></strong>
                     </div>
                     <div className="credits">
-                        Designed by <a onClick={()=>navigate("/")}>WaterUp Team</a>
+                        {/*Designed by <a onClick={()=>navigate("/")}>WaterUp Team</a>*/}
+                        Designed by <a href="#hero">WaterUp Team</a>
                     </div>
                 </div>
             </footer>

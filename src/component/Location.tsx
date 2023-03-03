@@ -1,4 +1,5 @@
 import React from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
 import Map from "../img/map.png"
 
 export const Location = () => {
@@ -15,10 +16,12 @@ export const Location = () => {
                                 <div className="address">
                                     <i className="bi bi-geo-alt"></i>
                                     <h4>장소: 나온씨어터</h4>
-                                    <p>(도로명) 서울 종로구 혜화로9길 7
-                                        <br/>
-                                        (지번) 명륜1가 36-4 03068
-                                    </p>
+                                    <CopyToClipboard text={"서울 종로구 혜화로9길 7"} onCopy={()=>alert("도로명 주소가 복사되었습니다")}>
+                                        <p style={{cursor:"pointer"}}>(도로명) 서울 종로구 혜화로9길 7 (클릭 시 주소 복사)</p>
+                                    </CopyToClipboard>
+                                    <CopyToClipboard text={"명륜1가 36-4 03068"} onCopy={()=>alert("지번 주소가 복사되었습니다")}>
+                                        <p style={{cursor:"pointer"}}>(지번) 명륜1가 36-4 03068 (클릭 시 주소 복사)</p>
+                                    </CopyToClipboard>
                                 </div>
                                 <div className="address">
                                     <i className="bi bi-geo-alt"></i>

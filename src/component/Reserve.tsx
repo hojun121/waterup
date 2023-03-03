@@ -9,8 +9,8 @@ export const Reserve = () => {
                 <div className="container">
                     <div className="section-title">
                         <h2>예매하기</h2>
-                        <a href="https://form.office.naver.com/form/responseView.cmd?formkey=ODViZjA5OTktN2M4NC00NDZjLTlhYWYtN2VlMzA5MTU2N2Fh&sourceId=urlshare">본
-                            링크를 클릭하여 예매해주세요!</a>
+                        <a style={{textDecoration:"underline", color:"#32A4FF", cursor:"pointer"}} onClick={() => window.open("https://form.office.naver.com/form/responseView.cmd?formkey=ODViZjA5OTktN2M4NC00NDZjLTlhYWYtN2VlMzA5MTU2N2Fh&sourceId=urlshare")}>
+                            <h3>본링크를 클릭하여 예매해주세요!</h3></a>
                     </div>
                     <div className="row" data-aos="fade-up">
                         <div className="col-lg-12 d-flex justify-content-center">

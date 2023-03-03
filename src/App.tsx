@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'boxicons/css/boxicons.min.css';
-import {DetailNav, Nav} from "./component/Nav";
+import {Nav} from "./component/Nav";
 import {Home} from "./component/Home";
 import {Introduce} from "./component/Introduce";
 import {Notice} from "./component/Notice";
@@ -11,7 +11,7 @@ import {Members} from "./component/Members";
 import {Location} from "./component/Location";
 import {Copyright} from "./component/Copyright";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {MemberDetail} from "./component/MemberDetail";
+// import {MemberDetail} from "./component/MemberDetail";
 
 const App = () => {
     const mainDashboard = (
@@ -28,22 +28,23 @@ const App = () => {
             <Copyright/>
         </>
     );
-    const detailDashboard = (
-        <>
-            <DetailNav/>
-            <main id="main">
-                <MemberDetail/>
-            </main>
-        </>
-    );
+    // const detailDashboard = (
+    //     <>
+    //         <DetailNav/>
+    //         <main id="main">
+    //             <MemberDetail/>
+    //         </main>
+    //     </>
+    // );
     return (
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={mainDashboard}/>
-                    {/*<Route path="/waterUpActor/:role/:actorName" element={<MemberDetail/>} />*/}
-                    <Route path="waterUpActor" element={detailDashboard}/>
-                    <Route path="*" element={mainDashboard}></Route>
+                    {/*<Route path="/" element={mainDashboard}/>*/}
+                    {/*/!*<Route path="/waterUpActor/:role/:actorName" element={<MemberDetail/>} />*!/*/}
+                    {/*<Route path="waterUpActor" element={detailDashboard}/>*/}
+                    {/*<Route path="*" element={mainDashboard}></Route>*/}
+                    <Route path="*" element={mainDashboard}/>
                 </Routes>
             </BrowserRouter>
         </>
