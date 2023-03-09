@@ -391,7 +391,7 @@ export const Members = () => {
                                 <div className="portfolio-links" style={{cursor:"pointer"}}>
                                     <a onClick={() => openGallery(13)} title="가보어 부인 役 안세영"><i
                                         className="bx bx-search"></i></a>
-                                    <a onClick={() => window.open("https://instagram.com/asy9108?igshid=YmMyMTA2M2Y=")} title="인스타그램">
+                                    <a onClick={() => window.open("https://www.instagram.com/asy_act")} title="인스타그램">
                                         <i className="bx bxl-instagram"/>
                                     </a>
                                 </div>
