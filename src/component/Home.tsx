@@ -16,6 +16,7 @@ export const Home = () => {
             hasRunOnce.current = true;
         }
     }, []);
+    console.log("this is test");
     return <>
         <section id="hero" className="d-flex flex-column justify-content-center align-items-center">
             <div className="hero-container" style={{textAlign:"center"}} data-aos="fade-in">
