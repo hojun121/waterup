@@ -34,24 +34,24 @@ jobs:
 #           echo "Pushing image..."
 #           docker push $REGISTRY/waterup:$git_hash
           
-  updateargocdgit:
-    needs: dockerbuildnpush
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Clone and Commit and Push
-        env:
-          USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          GTOKEN: ${{ secrets.GTOKEN }}
-        run: |
-          git_hash=$(git rev-parse --short "$GITHUB_SHA")
-          git clone https://github.com/hojun121/argocd-example-apps.git
-          sed -i 's/waterup:.*/waterup:$git_hash/g' waterup/waterup-deployment.yaml
-          git add .
-          git config --local user.email "hojun121@gmail.com"
-          git config --local user.name "hojun121"
-          git commit -m 'Update web image tag'
-          git push
+    updateargocdgit:
+#       needs: dockerbuildnpush
+      runs-on: ubuntu-latest
+      steps:
+        -
+          name: Checkout
+          uses: actions/checkout@v2
+
+        - name: Clone and Commit and Push
+          env:
+            USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+            GTOKEN: ${{ secrets.GTOKEN }}
+          run: |
+            git_hash=$(git rev-parse --short "$GITHUB_SHA")
+            git clone https://github.com/hojun121/argocd-example-apps.git
+            sed -i 's/waterup:.*/waterup:$git_hash/g' waterup/waterup-deployment.yaml
+            git add .
+            git config --local user.email "hojun121@gmail.com"
+            git config --local user.name "hojun121"
+            git commit -m 'Update web image tag'
+            git push
